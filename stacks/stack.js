@@ -35,7 +35,21 @@ class Stack {
 
     return this;
   }
-  pop() {}
+  pop() {
+    if (this.length === 1) {
+      this.top = null;
+      this.bottom = null;
+      this.length = 0;
+      return this;
+    } else if (this.length === 0) {
+      return;
+    } else {
+      const holdingPointer = this.top.next;
+      this.top = holdingPointer;
+      this.length - 1;
+      return this;
+    }
+  }
 }
 
 const myStack = new Stack();
